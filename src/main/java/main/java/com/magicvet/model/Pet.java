@@ -2,7 +2,7 @@ package main.java.com.magicvet.model;
 
 import java.util.Objects;
 
-public class Pet {
+public abstract class Pet {
     private String type;
     private String sex;
     private String age;
@@ -53,10 +53,10 @@ public class Pet {
     public String toString() {
         return "Pet {" +
                 "\n\ttype = " + type +
-                ", sex =" + sex +
-                ", age =" + age +
-                ", name =" + name +
-                ", ownerName =" + ownerName +
+                ", sex = " + sex +
+                ", age = " + age +
+                ", name = " + name +
+                ", ownerName = " + ownerName +
                 "\n\t}";
     }
 
