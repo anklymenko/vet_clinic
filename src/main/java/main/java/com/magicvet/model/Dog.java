@@ -10,4 +10,16 @@ public class Dog extends Pet {
     public void setSize(String size) {
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "Dog {" +
+                "\n\ttype = " + this.getType() +
+                ", sex = " + this.getSex() +
+                ", age = " + this.getAge() +
+                ", name = " + this.getName() +
+                ", ownerName = " + this.getOwnerName() +
+                ", size = " + size +
+                "\n\t}";
+    }
 }

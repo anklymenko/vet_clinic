@@ -8,13 +8,13 @@ import main.java.com.magicvet.service.PetService;
 
 public class ApplicationRunner {
 
-    private ClientService clientService = new ClientService();
-    private PetService petService = new PetService();
+    private final ClientService clientService = new ClientService();
+    private final PetService petService = new PetService();
     public void run() {
         if (Authenticator.auth()) {
             Client client = clientService.registerNewClient();
             if (client != null) {
-                System.out.println("Do you what to add a pet? (Y/N)");
+                System.out.println("Do you want to add a pet? (Y/N)");
                 String answer = Main.Scanner.nextLine();
 
                 if (answer.equals("Y")) {
@@ -25,6 +25,8 @@ public class ApplicationRunner {
                     pet.setOwnerName(client.getFirstName() + " " + client.getLastName());
 
                     System.out.println("Pet has been added");
+
+                    System.out.println(client);
                 } else {
                     System.out.println("Skipping adding a pet");
                 }
