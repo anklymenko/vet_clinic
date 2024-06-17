@@ -55,6 +55,10 @@ public abstract class Pet {
         this.ownerName = ownerName;
     }
 
+    public LocalDateTime getRegistrationDate() {
+        return registrationDate;
+    }
+
     @Override
     public String toString() {
         return "Pet {" +

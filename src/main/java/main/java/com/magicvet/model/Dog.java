@@ -27,6 +27,7 @@ public class Dog extends Pet {
                 ", name = " + this.getName() +
                 ", ownerName = " + this.getOwnerName() +
                 ", size = " + size +
+                ", registrationTime = " + this.getRegistrationDate() +
                 "\n\t}";
     }
 
