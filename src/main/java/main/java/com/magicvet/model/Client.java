@@ -15,6 +15,7 @@ public class Client {
     private String email;
     private List<Pet> pets = new ArrayList<>();
     private final LocalDateTime registrationTime = LocalDateTime.now();
+    private Location location;
 
     @Override
     public String toString() {
@@ -23,6 +24,7 @@ public class Client {
                 ", lastName = " + lastName +
                 ", email = " + email +
                 ", registrationTime = " + registrationTime.format(formatter) +
+                ", location = " + location +
                 ", \n\tpets = " + pets +
                 "\n}";
     }
@@ -35,12 +37,13 @@ public class Client {
         return Objects.equals(firstName, client.firstName)
                 && Objects.equals(lastName, client.lastName)
                 && Objects.equals(email, client.email)
+                && Objects.equals(location, client.location)
                 && Objects.equals(pets, client.pets);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstName, lastName, email, pets);
+        return Objects.hash(firstName, lastName, email, location, pets);
     }
 
     public void setFirstName(String firstName) {
@@ -77,5 +80,17 @@ public class Client {
 
     public void addPet(Pet pet) {
         this.pets.add(pet);
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public enum Location {
+        KYIV, LVIV, ODESA;
     }
 }
