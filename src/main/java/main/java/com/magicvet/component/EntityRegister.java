@@ -29,16 +29,14 @@ public class EntityRegister {
 
         Map<Client.Location, List<Client>> clientsByLocation = clients.stream()
                 .collect(Collectors.groupingBy(Client::getLocation));
-        printClients(clientsByLocation);
+        clientsByLocation.entrySet().forEach(this::printClients);
     }
 
-    private void printClients(Map<Client.Location, List<Client>> clientsByLocation) {
-        for (Map.Entry<Client.Location, List<Client>> clients: clientsByLocation.entrySet()) {
+    private void printClients(Map.Entry<Client.Location, List<Client>> clients) {
             String content = "\nLocation: " + clients.getKey()
                     + "\nClients (" + clients.getValue().size() + "):"
                     + "\n\t" + clients.getValue();
             System.out.println(content);
-        }
     }
 
     private Optional<Client> addClient() {
